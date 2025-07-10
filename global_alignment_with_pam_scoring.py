@@ -53,7 +53,7 @@ def global_alignment(v, w, score_matrix, gap_penalty):
 v = "HEAGAWGHEE"
 w = "PAWHEAE"
 
-aligned_v, aligned_w, score = global_alignment(v, w, pam250, gap_penalty=-5)
+aligned_v, aligned_w, score = global_alignment(v, w, pam250, gap_penalty=-1)
 
 print("Aligned v:", aligned_v)
 print("Aligned w:", aligned_w)
