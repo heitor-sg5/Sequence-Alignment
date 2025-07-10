@@ -79,4 +79,4 @@ aligned_seqs, score = t_dimensional_global_alignment(seqs, p_gap=1)
 
 for i, aln in enumerate(aligned_seqs):
     print(f"Aligned {i+1}: {aln}")
-print(f"Entropy Score: {score:.1f}")
+print(f"Entropy Score: {score:.0f}")
