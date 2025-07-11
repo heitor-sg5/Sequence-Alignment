@@ -130,7 +130,7 @@ The gap penalty (p_gap) and mismatch penalty (pmm) are configurable parameters f
 - Implements a space-efficient global alignment method using a divide-and-conquer strategy, reducing memory from quadratic to linear in sequence length.
 - Recursively splits one sequence and computes alignment scores from both directions to find the optimal split point.
 - Uses Needleman-Wunsch for base cases, reconstructing the full optimal alignment while only storing linear space score arrays.
-- Time complexity: O(m *log n)
+- Time complexity: O(m * log n)
 
 ### Global MSA
 
