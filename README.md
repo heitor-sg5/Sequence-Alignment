@@ -143,7 +143,9 @@ The gap penalty (p_gap) and mismatch penalty (pmm) are configurable parameters f
 ## 🧪 Example Output
 
 Aligned v: GCC-CAGTC-TATGTCAGGGGGCACGAGCATG--CACA-
+
 Aligned w: GCCGCCGTCGT-TTTCA----GCA-G-TTATGTTCAGAT
+
 Score: 5
 
 ---
