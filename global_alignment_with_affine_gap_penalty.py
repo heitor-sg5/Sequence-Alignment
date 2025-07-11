@@ -68,7 +68,7 @@ def global_alignment_affine(v, w, pmm, gap_open, gap_extend):
 v = "GCCCAGTCTATGTCAGGGGGCACGAGCATGCACA"
 w = "GCCGCCGTCGTTTTCAGCAGTTATGTTCAGAT"
 
-aligned_v, aligned_w, score = global_alignment_affine(v, w, pmm=1, gap_open=1, gap_extend=1)
+aligned_v, aligned_w, score = global_alignment_affine(v, w, pmm=1, gap_open=1, gap_extend=0.5)
 print("Aligned v:", aligned_v)
 print("Aligned w:", aligned_w)
 print("Score:", score)
