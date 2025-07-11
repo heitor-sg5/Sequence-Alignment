@@ -95,48 +95,56 @@ The gap penalty (p_gap) and mismatch penalty (pmm) are configurable parameters f
 - Aligns two sequences end-to-end using dynamic programming, optimizing a score based on matches, mismatches, and gap penalties.
 - Builds a scoring matrix where matches score positively, mismatches and gaps are penalized with specified parameters (pmm and p_gap).
 - Uses backtracking through the matrix to reconstruct the highest-scoring alignment and returns aligned sequences with the total alignment score.
+- Time complexity: O(n * m)
 
 ### Smith-Waterman Local Alignment
 
 - Identifies the highest-scoring matching subsequences between two sequences using dynamic programming with match, mismatch, and gap penalties.
 - Scores are reset to zero when negative, allowing identification of optimal local regions rather than full-length alignments.
 - Backtracks from the highest scoring cell to reconstruct the best local alignment and returns the aligned subsequences with their score.
+- Time complexity: O(n * m)
 
 ### Fitting Alignment
 
 - Aligns a shorter sequence completely to a substring of a longer sequence, useful when one sequence is expected to fit within another.
 - Uses dynamic programming with match, mismatch, and gap penalties, but allows free gaps at the start of the longer sequence.
 - Finds the highest score at the end of the shorter sequence and backtracks to reconstruct the optimal fitting alignment.
+- Time complexity: O(n * m)
 
 ### Global Alignment with Affine Gap
 
 - Implements global alignment considering different penalties for gap opening (high) and gap extension (lower), reflecting biological reality more accurately.
 - Uses three dynamic programming matrices to track match/mismatch and gaps separately, improving gap scoring precision.
 - Outputs the optimal end-to-end alignment with the highest score accounting for both substitution and affine gap penalties.
+- Time complexity: O(n * m)
 
 ### Global Alignment with PAM
 
 - Performs global alignment of protein sequences using (Biopython's) PAM substitution matrix to score amino acid matches and mismatches.
 - Incorporates a uniform gap penalty for insertions and deletions while leveraging biologically informed substitution scores.
 - Returns the highest-scoring end-to-end alignment that reflects evolutionary likelihoods based on PAM scores.
+- Time complexity: O(n * m)
 
 ### Hirschberg's Global Alignment
 
 - Implements a space-efficient global alignment method using a divide-and-conquer strategy, reducing memory from quadratic to linear in sequence length.
 - Recursively splits one sequence and computes alignment scores from both directions to find the optimal split point.
 - Uses Needleman-Wunsch for base cases, reconstructing the full optimal alignment while only storing linear space score arrays.
+- Time complexity: O(m *log n)
 
 ### Global MSA
 
 - Extends pairwise global alignment to multiple sequences using dynamic programming on a t-dimensional scoring matrix, where t is the number of sequences.
 - Considers all possible moves (combinations of gaps and matches across sequences) at each step and scores them by summing pairwise substitution and gap penalties.
 - Uses backtracking from the matrix’s endpoint to reconstruct the optimal multiple alignment, producing aligned sequences with gaps to maximize the overall score.
+- Time complexity: O(n^t)
 
 ### Global MSA with Entropy
 
 - Extends multiple sequence alignment by scoring alignments using an entropy-based function that rewards conservation and penalizes gaps, reflecting sequence variability.
 - Uses dynamic programming over a t-dimensional matrix where each cell considers all possible insertion/deletion/match combinations across sequences.
 - Recursively computes scores by combining previous scores with entropy of the aligned characters, then backtracks to produce the optimal multiple alignment and its overall entropy score.
+- Time complexity: O(n^t)
 
 ---
 
